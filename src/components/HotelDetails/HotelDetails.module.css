@@ -1,0 +1,34 @@
+.container {
+  display:flex;
+}
+
+.flex{
+    display: flex;
+}
+
+.nowrap{
+    flex-wrap: nowrap;
+}
+
+.flexColumn{
+    flex-direction: column;
+}
+
+.m10{
+    margin: 10px !important;
+}
+
+.ml20 {
+    margin-left: 20px !important;
+}
+
+.noMargin {
+    margin: 0 !important;
+}
+
+.subtitle {
+    color: #B8BABB;
+}
+.w75{
+    width: 75% !important;
+}
