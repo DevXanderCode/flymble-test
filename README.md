@@ -4,4 +4,4 @@
 
 Basically this project uses NPM as it package manager and can be started with the command
 
-npm start
+npm start on the project directory
