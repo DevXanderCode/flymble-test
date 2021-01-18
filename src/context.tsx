@@ -1,9 +1,9 @@
 import * as React from "react";
 
-const HotelContext = React.createContext();
+const HotelContext = React.createContext<any>(undefined);
 
-const HotelProvider = (props) => {
-  const [hotelState, setHotelState] = React.useState("");
+const HotelProvider: React.FC = (props) => {
+  const [hotelState, setHotelState] = React.useState({ test: "" });
   return (
     <HotelContext.Provider value={{ ...hotelState }}>
       {props.children}
