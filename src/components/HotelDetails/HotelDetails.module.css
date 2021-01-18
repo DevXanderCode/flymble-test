@@ -22,13 +22,26 @@
     margin-left: 20px !important;
 }
 
+.lineHeight2 {
+    line-height: 2;
+}
+
 .noMargin {
     margin: 0 !important;
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.pb10 {
+    padding-bottom: 10px !important;
 }
 
 .subtitle {
     color: #B8BABB;
 }
+
 .w75{
     width: 75% !important;
 }

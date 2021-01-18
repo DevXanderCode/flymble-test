@@ -2,7 +2,12 @@ import * as React from "react";
 import cx from "classnames";
 import styles from "./HotelDetails.module.css";
 
-const HotelDetails: React.FC = () => {
+interface Props {
+  name?: string;
+  subTitle?: string;
+}
+
+const HotelDetails: React.FC<Props> = (props) => {
   return (
     <div>
       <div className={cx(styles.container, styles.m10)}>
@@ -16,13 +21,12 @@ const HotelDetails: React.FC = () => {
             styles.w75
           )}
         >
-          <h3 className={cx(styles.noMargin)}>
-            Hello from the Hotel Details component
+          <h3 className={cx(styles.noMargin, styles.lineHeight2)}>
+            {props.name || "Hello from the Hotel Details component"}
           </h3>
           <h5 className={cx(styles.noMargin, styles.subtitle)}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor
-            lectus sed viverra accumsan. Curabitur ultrices efficitur sodales.
-            Ut diam sapien, maximus semper ex nec, hendrerit maximus felis
+            {props.subTitle ||
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In auctor lectus sed viverra accumsan. Curabitur ultrices efficitur sodales.Ut diam sapien, maximus semper ex nec, hendrerit maximus felis"}
           </h5>
         </div>
       </div>
