@@ -1,0 +1,15 @@
+.selectContainer {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.label {
+  color: #b8babb;
+  font-size: 12px;
+}
+
+.select {
+  width: 100%;
+}

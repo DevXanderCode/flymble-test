@@ -11,7 +11,7 @@ const HotelDetails: React.FC<Props> = (props) => {
   return (
     <div>
       <div className={cx(styles.container, styles.m10)}>
-        <img src={"https://via.placeholder.com/100"} alt="hotel" />
+        <img src={"https://via.placeholder.com/120"} alt="hotel" />
         <div
           className={cx(
             styles.flex,

@@ -1,0 +1,31 @@
+.pageContainer {
+  padding: 0.5rem;
+}
+.container {
+  display: flex;
+}
+
+.totalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total {
+  font-weight: bold;
+  vertical-align: middle;
+  align-self: center;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+}
+
+.overallTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.button {
+  margin-top: 0.65rem;
+  padding: 0.53rem 1.5rem;
+}
