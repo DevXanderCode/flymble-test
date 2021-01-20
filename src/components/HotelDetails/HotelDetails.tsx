@@ -5,13 +5,18 @@ import styles from "./HotelDetails.module.css";
 interface Props {
   name?: string;
   subTitle?: string;
+  image?: string;
 }
 
 const HotelDetails: React.FC<Props> = (props) => {
   return (
     <div>
       <div className={cx(styles.container, styles.m10)}>
-        <img src={"https://via.placeholder.com/120"} alt="hotel" />
+        <img
+          src={props.image || "https://via.placeholder.com/120"}
+          alt="hotel"
+          width="120"
+        />
         <div
           className={cx(
             styles.flex,

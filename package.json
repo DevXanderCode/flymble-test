@@ -10,7 +10,6 @@
     "@types/react-dom": "^16.9.10",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
-    "react": "0.0.0-experimental-27659559e",
     "react-placeholder": "^4.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -46,6 +45,7 @@
     "@types/node": "^12.19.14",
     "@types/react": "^16.14.2",
     "@types/react-router-dom": "^5.1.7",
+    "react": "0.0.0-experimental-27659559e",
     "react-dom": "0.0.0-experimental-27659559e"
   }
 }

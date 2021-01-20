@@ -1,47 +1,48 @@
 .container {
-  display:flex;
+  display: flex;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
 }
 
-.nowrap{
-    flex-wrap: nowrap;
+.nowrap {
+  flex-wrap: nowrap;
 }
 
-.flexColumn{
-    flex-direction: column;
+.flexColumn {
+  flex-direction: column;
 }
 
-.m10{
-    margin: 10px !important;
+.m10 {
+  margin: 10px !important;
 }
 
 .ml20 {
-    margin-left: 20px !important;
+  margin-left: 20px !important;
 }
 
 .lineHeight2 {
-    line-height: 2;
+  line-height: 2;
 }
 
 .noMargin {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .mb10 {
-    margin-bottom: 10px !important;
+  margin-bottom: 10px !important;
 }
 
 .pb10 {
-    padding-bottom: 10px !important;
+  padding-bottom: 10px !important;
 }
 
 .subtitle {
-    color: #B8BABB;
+  color: #b8babb;
+  font-size: 16px;
 }
 
-.w75{
-    width: 75% !important;
+.w75 {
+  width: 75% !important;
 }

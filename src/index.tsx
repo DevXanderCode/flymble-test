@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import { HotelProvider } from "./context";
 
 const root = document.getElementById("root") as HTMLElement;
-// ReactDOM.createRoot(root).render(
+// ReactDOM.unstable_createRoot(root).render(
 //   <React.StrictMode>
 //     <HotelProvider>
 //       <Router>
