@@ -29,13 +29,10 @@ const wrapPromise =  (promise: Promise<object>) => {
         return {
         read(){
             if (status === "pending"){
-                throw suspender;
-                // return  suspender
+                throw suspender; 
             } else if (status === "error"){
                 throw result;
-                // return result
             } else if (status === "success"){
-                // console.log("Logging Result", result);
                 return result;
             }
         }

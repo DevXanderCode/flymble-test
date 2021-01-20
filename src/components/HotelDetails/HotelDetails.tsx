@@ -10,12 +10,13 @@ interface Props {
 
 const HotelDetails: React.FC<Props> = (props) => {
   return (
-    <div>
+    <div className={cx(styles.w90)}>
       <div className={cx(styles.container, styles.m10)}>
         <img
           src={props.image || "https://via.placeholder.com/120"}
           alt="hotel"
           width="120"
+          height="120"
         />
         <div
           className={cx(
@@ -23,7 +24,7 @@ const HotelDetails: React.FC<Props> = (props) => {
             styles.nowrap,
             styles.flexColumn,
             styles.ml20,
-            styles.w75
+            styles.w80
           )}
         >
           <h3 className={cx(styles.noMargin, styles.lineHeight2)}>

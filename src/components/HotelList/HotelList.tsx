@@ -17,16 +17,9 @@ interface payload {
 }
 
 const HotelList: React.FC = () => {
-  const [hotels, setHotels] = React.useState<payload[] | any>([]);
-
   let numOfNights: Array<number> = [];
   Array.from(Array(100), (_, i) => numOfNights.push(i + 1));
-  // React.useEffect(() => {
-  //   setHotels(resource.hotels.read());
-  // }, []);
   const data = resource.hotels.read();
-
-  console.log("Logging Hotels", data);
   return (
     <div className={cx(styles.pageContainer)}>
       <div className="page-title">
@@ -49,7 +42,7 @@ const HotelList: React.FC = () => {
               />
               <div className={cx(styles.totalContainer)}>
                 <SelectHotel options={numOfNights} />
-                <div className={styles.total}>{"00.00€"}</div>
+                <div className={styles.total}>{"00.00 €"}</div>
               </div>
             </div>
           </>
@@ -57,7 +50,7 @@ const HotelList: React.FC = () => {
       )}
       <div className={styles.overallTotalContainer}>
         <div>
-          <div className={styles.total}>{"00.00€"}</div>
+          <div className={styles.total}>{"00.00 €"}</div>
           <Link to="/payment">
             <button className={styles.button}>Buy</button>
           </Link>
