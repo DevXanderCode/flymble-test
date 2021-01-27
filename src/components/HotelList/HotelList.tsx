@@ -5,6 +5,8 @@ import styles from "./HotelList.module.css";
 import HotelDetails from "../HotelDetails/HotelDetails";
 import SelectHotel from "../Select/SelectHotel";
 import { fetchData } from "../../Api";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { HotelConsumer } from "../../context";
 
 const resource = fetchData();
 
@@ -14,6 +16,7 @@ interface payload {
   hotelPerNight: string;
   image: string;
   subTitle: string;
+  total: number;
 }
 
 const HotelList: React.FC = () => {
@@ -25,38 +28,49 @@ const HotelList: React.FC = () => {
       <div className="page-title">
         <h5>Hotel List</h5>
       </div>
-      {data &&
-        data.map(
-          (item: {
-            id: string;
-            name: string;
-            hotelPerNight: string;
-            image: string;
-            subTitle: string | undefined;
-          }) => (
-            <>
-              <div className={cx(styles.container)} key={item.id}>
-                <HotelDetails
-                  name={item.name}
-                  subTitle={item.subTitle}
-                  image={item.image}
+      <HotelConsumer>
+        {(value): any =>
+          value.hotels &&
+          value.hotels.map((item: payload) => (
+            <div className={cx(styles.container)} key={item.id}>
+              <HotelDetails
+                name={item.name}
+                subTitle={item.subTitle}
+                image={item.image}
+              />
+              <div className={cx(styles.totalContainer)}>
+                <SelectHotel
+                  options={numOfNights}
+                  onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                    value.increment(item.id, e.currentTarget.value)
+                  }
                 />
-                <div className={cx(styles.totalContainer)}>
-                  <SelectHotel options={numOfNights} />
-                  <div className={styles.total}>{"00.00 €"}</div>
+                <div className={cx(styles.container, styles.flexColumn)}>
+                  <div className={cx(styles.mlauto)}>
+                    <RiDeleteBin6Line
+                      className={styles.icon}
+                      onClick={() => value.deleteHotel(item.id)}
+                    />
+                  </div>
+                  <div className={styles.total}>{`${item.total} €`}</div>
                 </div>
               </div>
-            </>
-          )
+            </div>
+          ))
+        }
+      </HotelConsumer>
+      <HotelConsumer>
+        {(value) => (
+          <div className={styles.overallTotalContainer}>
+            <div>
+              <div className={styles.total}>{`${value.overAllTotal} €`}</div>
+              <Link to="/payment">
+                <button className={styles.button}>Buy</button>
+              </Link>
+            </div>
+          </div>
         )}
-      <div className={styles.overallTotalContainer}>
-        <div>
-          <div className={styles.total}>{"00.00 €"}</div>
-          <Link to="/payment">
-            <button className={styles.button}>Buy</button>
-          </Link>
-        </div>
-      </div>
+      </HotelConsumer>
     </div>
   );
 };

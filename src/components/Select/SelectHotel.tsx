@@ -2,14 +2,12 @@ import * as React from "react";
 import styles from "./SelectHotel.module.css";
 
 interface InputProps {
-  options?: number[];
-  value?: Number;
-  onChange?: () => void;
+  options: number[];
+  value?: number;
+  onChange?: any;
 }
 
-type Inputs = InputProps &
-  React.HTMLProps<HTMLButtonElement> &
-  React.HTMLAttributes<HTMLButtonElement>;
+type Inputs = InputProps;
 
 const SelectHotel = (props: Inputs) => {
   const options =

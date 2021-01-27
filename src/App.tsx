@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import { HotelProvider } from "./context";
 import SkeletonLoader from "./components/SkeletonLoader/SkeletonLoader";
 const HotelList = React.lazy(() => import("./components/HotelList/HotelList"));
-// import HotelList from "./components/HotelList/HotelList";
-// const SkeletonLoader = React.lazy(
-//   () => import("./components/SkeletonLoader/SkeletonLoader")
-// );
+const PaymentForm = React.lazy(
+  () => import("./components/PaymentForm/PaymentForm")
+);
 
 const App: React.FC = () => {
   return (
@@ -20,12 +20,13 @@ const App: React.FC = () => {
           </div>
         }
       >
-        <Switch>
-          <Route exact path="/" render={() => <HotelList />} />
-          <Route exact path="/skeleton" render={() => <SkeletonLoader />} />
-          {/* <Route path="/payment" render={() => <PaymentForm />} /> */}
-          {/* <Route render={() => <NotFoundPage} /> /> */}
-        </Switch>
+        <HotelProvider>
+          <Switch>
+            <Route exact path="/" render={() => <HotelList />} />
+            {/* <Route path="/payment" render={() => <PaymentForm />} /> */}
+            {/* <Route render={() => <NotFoundPage} /> /> */}
+          </Switch>
+        </HotelProvider>
       </React.Suspense>
     </div>
   );

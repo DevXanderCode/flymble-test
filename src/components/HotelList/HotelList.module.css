@@ -5,6 +5,19 @@
   display: flex;
 }
 
+.flexColumn {
+  flex-direction: column;
+}
+
+.mlauto {
+  margin-left: auto !important;
+}
+
+.icon {
+  color: #e6e6e6;
+  cursor: pointer;
+}
+
 .totalContainer {
   display: flex;
   align-items: center;
@@ -17,6 +30,7 @@
   align-self: center;
   margin-left: 1rem;
   margin-top: 0.4rem;
+  white-space: nowrap;
 }
 
 .overallTotalContainer {
