@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  min-width: 35rem;
+}
+
+.my10 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+.my15 {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+}
+.mr10 {
+  margin-right: 10px !important;
+}
+
+.mr15 {
+  margin-right: 15px !important;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
+.w75 {
+  width: 75% !important;
+}
+
+.input {
+  padding: 10px;
+  border-color: #eaeaea;
+  border-style: solid;
+}
+
+.label {
+  margin: auto 0;
+}
+
+.input:focus {
+  outline-color: #aecbca !important;
+  border-color: #aecbca;
+}

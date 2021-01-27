@@ -57,18 +57,14 @@ const HotelProvider: React.FC = (props) => {
       .get(baseUrl)
       .then((res) => setHotelDetails(res.data))
       .catch((err) => console.log("Got this error when fetching Hotels", err));
-    console.log("Updates");
   }, []);
 
   React.useEffect(() => {
     let total: Array<number> = [];
     hotelDetails.forEach((item) => total.push(item.total));
-    console.log("Logging Total Array", total);
 
     let overAllTotal =
       total.length > 0 && total.reduce((total, num) => total + num);
-
-    console.log("overall Total", overAllTotal);
 
     overAllTotal
       ? setHotelState({

@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <HotelProvider>
           <Switch>
             <Route exact path="/" render={() => <HotelList />} />
-            {/* <Route path="/payment" render={() => <PaymentForm />} /> */}
+            <Route path="/payment" render={() => <PaymentForm />} />
             {/* <Route render={() => <NotFoundPage} /> /> */}
           </Switch>
         </HotelProvider>
