@@ -23,9 +23,12 @@ const HotelProvider: React.FC = (props) => {
   });
 
   const [hotelDetails, setHotelDetails] = React.useState<Array<payload>>([]);
+  const [fixedHotels, setFixedHotels] = React.useState<Array<payload>>([]);
+  let [counter, setCounter] = React.useState(0);
 
   const increment = (id: string, num: number) => {
     let tempHotels: Array<payload> = [...hotelDetails];
+    setCounter(counter++);
 
     const selectedIdx: number = tempHotels.findIndex(
       (selectedItem) => selectedItem.id === id
@@ -52,10 +55,26 @@ const HotelProvider: React.FC = (props) => {
       );
   };
 
+  const search = (searchInput: string) => {
+    console.log("Logging search value", searchInput);
+    if (searchInput) {
+      setHotelDetails(
+        hotelDetails.filter((hotel) =>
+          hotel.name.toLowerCase().includes(searchInput.toLowerCase())
+        )
+      );
+    } else {
+      setHotelDetails([...fixedHotels]);
+    }
+  };
+
   React.useEffect(() => {
     axios
       .get(baseUrl)
-      .then((res) => setHotelDetails(res.data))
+      .then((res) => {
+        setHotelDetails(res.data);
+        setFixedHotels(res.data);
+      })
       .catch((err) => console.log("Got this error when fetching Hotels", err));
   }, []);
 
@@ -72,7 +91,8 @@ const HotelProvider: React.FC = (props) => {
           overAllTotal: `${overAllTotal.toFixed(2)}`,
         })
       : setHotelState({ ...hotelState, overAllTotal: "00.00" });
-  }, [hotelDetails]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [counter, hotelDetails]);
   return (
     <HotelContext.Provider
       value={{
@@ -80,6 +100,7 @@ const HotelProvider: React.FC = (props) => {
         ...hotelState,
         increment,
         deleteHotel,
+        search,
       }}
     >
       {props.children}

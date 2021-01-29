@@ -1,0 +1,21 @@
+.dflex {
+  display: flex !important;
+}
+.flexvcenter {
+  align-items: center !important;
+}
+.searchInput {
+  border: 1px solid rgba(112, 112, 112, 0.8);
+  padding: 5px 10px;
+  background-color: #eeed;
+  border-radius: 3px;
+  width: 35%;
+}
+
+.searchInput .input {
+  border: none !important;
+  outline: none !important;
+  background-color: #00000000;
+  padding: 5px;
+  width: 100%;
+}

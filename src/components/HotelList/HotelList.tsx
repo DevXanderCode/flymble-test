@@ -7,6 +7,7 @@ import SelectHotel from "../Select/SelectHotel";
 import { fetchData } from "../../Api";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { HotelConsumer } from "../../context";
+import SearchInput from "../SearchBar/SearchInput";
 
 const resource = fetchData();
 
@@ -23,13 +24,15 @@ const HotelList: React.FC = () => {
   let numOfNights: Array<number> = [];
   Array.from(Array(100), (_, i) => numOfNights.push(i + 1));
 
-  React.useEffect(() => {
-    resource.hotels.read();
-  }, []);
+  resource.hotels.read();
+
   return (
     <div className={cx(styles.pageContainer)}>
       <div className="page-title">
-        <h5>Hotel List</h5>
+        <h3>Hotel List</h3>
+      </div>
+      <div className={cx(styles.container, styles.leftContent)}>
+        <SearchInput />
       </div>
       <HotelConsumer>
         {(value): any =>

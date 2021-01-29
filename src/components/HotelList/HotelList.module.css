@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.leftContent {
+  justify-content: flex-end;
+}
+
 .mlauto {
   margin-left: auto !important;
 }
