@@ -133,6 +133,11 @@ const PaymentForm = () => {
           name="address"
           onChange={(e: React.FormEvent<HTMLInputElement>) => {
             handleChange(e);
+            isTouched.address
+              ? Validation.isInputEmpty(e.currentTarget.value)
+                ? handleError(e, "Please input your Address")
+                : handleError(e, "")
+              : handleError(e, "");
           }}
           onBlur={(e: React.FormEvent<HTMLInputElement>) => {
             handleTouched(e);

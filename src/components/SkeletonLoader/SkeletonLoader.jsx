@@ -1,20 +1,13 @@
 import * as React from "react";
+import cx from "classnames";
 import ReactPlaceholder from "react-placeholder";
 import "react-placeholder/lib/reactPlaceholder.css";
-// import {RectShape } from ""
+import styles from "./Skeleton.module.css";
 
 const SkeletonLoader = () => {
   return (
-    <div
-      style={{
-        width: "95%",
-        // height: "120px",
-        margin: "10px",
-        marginLeft: "20px",
-        display: "flex",
-      }}
-    >
-      <div style={{ margin: "10px", display: "flex", width: "100%" }}>
+    <div className={cx(styles.dflex, styles.w95, styles.m10, styles.ml20)}>
+      <div className={cx(styles.dflex, styles.m10, styles.w100)}>
         <ReactPlaceholder
           delay={1}
           showLoadingAnimation={true}
@@ -25,7 +18,7 @@ const SkeletonLoader = () => {
         >
           <div />
         </ReactPlaceholder>
-        <div style={{ display: "flex", width: "75%", flexDirection: "column" }}>
+        <div className={cx(styles.dflex, styles.w75, styles.flexcolumn)}>
           <ReactPlaceholder
             delay={1}
             type={"textRow"}
@@ -48,13 +41,8 @@ const SkeletonLoader = () => {
           </ReactPlaceholder>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          marginLeft: "15px",
-        }}
-      >
-        <div style={{ marginTop: "auto", marginBottom: "auto" }}>
+      <div className={cx(styles.dflex, styles.ml15)}>
+        <div className={cx(styles.myauto)}>
           <ReactPlaceholder
             delay={1}
             type={"textRow"}
@@ -64,13 +52,7 @@ const SkeletonLoader = () => {
             <div />
           </ReactPlaceholder>
         </div>
-        <div
-          style={{
-            marginTop: "auto",
-            marginBottom: "auto",
-            marginLeft: "25px",
-          }}
-        >
+        <div className={cx(styles.myauto, styles.ml25)}>
           <ReactPlaceholder
             delay={1}
             type={"textRow"}
