@@ -9,7 +9,10 @@ interface input {
   value?: string;
   onChange?: any;
   type?: string;
+  onBlur?: any;
   placeholder?: string;
+  errorMsg?: string;
+  error?: boolean;
   min?: number;
   max?: number;
 }
@@ -21,18 +24,26 @@ const TextInput = (props: input) => {
         {props.label}
         {props.required && "*"}
       </label>
-      <input
-        id={props.name}
-        name={props.name}
-        value={props.value}
-        onChange={props.onChange}
-        type={props.type || "text"}
-        placeholder={props.placeholder}
-        min={props.min}
-        max={props.max}
-        className={cx(styles.w75, styles.input)}
-        required={props.required}
-      />
+      <div className={cx(styles.w85)}>
+        <input
+          id={props.name}
+          name={props.name}
+          value={props.value}
+          onChange={props.onChange}
+          type={props.type || "text"}
+          placeholder={props.placeholder}
+          onBlur={props.onBlur}
+          min={props.min}
+          max={props.max}
+          className={cx(
+            styles.w75,
+            styles.input,
+            `${props.error && styles.error}`
+          )}
+          required={props.required}
+        />
+        <p className={cx(styles.errorMsg)}>{props.error && props.errorMsg}</p>
+      </div>
     </div>
   );
 };

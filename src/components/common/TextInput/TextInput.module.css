@@ -8,10 +8,12 @@
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
+
 .my15 {
   margin-top: 15px !important;
   margin-bottom: 15px !important;
 }
+
 .mr10 {
   margin-right: 10px !important;
 }
@@ -24,6 +26,9 @@
   width: 100% !important;
 }
 
+.w85 {
+  width: 85% !important;
+}
 .w75 {
   width: 75% !important;
 }
@@ -36,9 +41,30 @@
 
 .label {
   margin: auto 0;
+  font-weight: bold;
 }
 
+.input.error {
+  outline-color: rgba(232, 10, 12, 0.8);
+  border-color: rgba(232, 10, 12, 0.8);
+}
+.input:focus.error {
+  outline-color: rgba(232, 10, 12, 0.8) !important;
+  border-color: rgba(232, 10, 12, 0.8) !important;
+}
+
+.errorMsg {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(232, 10, 12, 0.8);
+}
 .input:focus {
   outline-color: #aecbca !important;
   border-color: #aecbca;
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    min-width: 100%;
+  }
 }

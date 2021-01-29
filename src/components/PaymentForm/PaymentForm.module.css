@@ -5,3 +5,39 @@
   justify-content: center;
   width: 100% !important;
 }
+
+.header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mxauto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.submitBtn {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  text-align: center;
+  width: 60%;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.dNone {
+  display: none;
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    align-items: normal;
+    padding: 15px;
+  }
+}

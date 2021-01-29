@@ -22,7 +22,10 @@ interface payload {
 const HotelList: React.FC = () => {
   let numOfNights: Array<number> = [];
   Array.from(Array(100), (_, i) => numOfNights.push(i + 1));
-  let data = resource.hotels.read();
+
+  React.useEffect(() => {
+    resource.hotels.read();
+  }, []);
   return (
     <div className={cx(styles.pageContainer)}>
       <div className="page-title">
